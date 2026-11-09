@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/Inter-VariableFont_opsz\,wght.ttf') format('woff2-variations');
+   font-weight: 100 900; 
+  font-style: normal;
+  font-display: swap;
+}
+
 /*reset CSS*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -52,5 +60,7 @@ table {
   --cor-gelo:#F8FAFC;
   --cor-verde:#15803D;
   --cor-cinza-claro:#E2E8F0;
-  --font-inter400:
+  --fonte-global: 'Inter', sans-serif;
+  --fonte-400:400;
+  --fonte-600:600;
 }
