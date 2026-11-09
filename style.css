@@ -59,8 +59,13 @@ table {
   --cor-laranja:#F59E0B;
   --cor-gelo:#F8FAFC;
   --cor-verde:#15803D;
+  --cor-amarelo:#FFF7E5;
   --cor-cinza-claro:#E2E8F0;
   --fonte-global: 'Inter', sans-serif;
   --fonte-400:400;
   --fonte-600:600;
+}
+
+body{
+	background-color: var(--cor-verde);
 }
