@@ -67,5 +67,22 @@ table {
 }
 
 body{
-	background-color: var(--cor-verde);
+	background-color: var(--cor-gelo);
+}
+header{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--cor-branco);
+  height: 88px;
+  width: 1400px;
+  border-bottom: 1px solid red;
+  font-family: var(--fonte-global);
+  font-size: 14px;
+}
+.logo{
+  margin: 24px 0 24px 64px;
+  /*topo direita baixo esquerda*/
+}
+.menu{
+  margin:34px 71px 34px 71px;
 }
