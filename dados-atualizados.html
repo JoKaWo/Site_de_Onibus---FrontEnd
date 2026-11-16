@@ -12,63 +12,64 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
-  <title>Dados Atualizados· Canoas Bus</title>
+  <title>Dados Atualizados · Canoas Bus</title>
 </head>
 
 <body>
   <!-- Cabeçalho -->
   <header class="cabecalho">
-    <img class="cabecalho-logo" src="./assets/logo.png" alt="Logo do Canoas Bus" />
+    <div class="cabecalho-logo">
+      <img src="./assets/logo.png" alt="Ícone de ônibus" />
+    </div>
     <h1 class="cabecalho-titulo">Canoas Bus</h1>
-    <div class="cabecalho-opcoes">
+    
+    <nav class="cabecalho-opcoes">
       <a href="#">Mapa</a>
-      <a href="#">Meu perfil</a>
-    </div>
+      <a href="#" class="ativo">Meu perfil</a>
+    </nav>
+
     <div class="cabecalho-usuario-sair">
-    <div class="cabecalho-usuario">Olá, Marina</div>
-    <div class="cabecalho-sair">
-      <a href="./index.html">Sair</a>
-      <img src="./assets/sair.png">
+      <div class="cabecalho-usuario">Olá, Marina</div>
+      <div class="cabecalho-sair">
+        <a href="./index.html">Sair</a>
+        <img src="./assets/sair.png" alt="Ícone sair" />
+      </div>
     </div>
-    </div>
-  </div>
   </header>
 
   <!-- Corpo -->
   <main class="main-dados">
-    <aside>
-      <nav class="nav-breadcrumb">
-        <ul>
-          <li><span aria-current="page">Minha conta</span></li>
-        </ul>
+    <aside class="dados-cabecalho-container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="#">Minha conta</a></li>
+        </ol>
       </nav>
 
       <h1 class="dados-titulo">Meu perfil</h1>
       <span class="dados-subtitulo">Seus dados, sempre em dia.</span>
     </aside>
 
-    <section class="principal-dados">
-      <div class="secao-dados">
-
-        <h2>Dados pessoais</h2>
-        <span>Atualize suas informações de acesso.</span>
-
-        <form class="formulario" id="form-login" action="" novalidate>
+    <form class="formulario" id="form-login" action="" novalidate>
+      <section class="principal-dados">
+        <div class="secao-dados">
+          <h2>Dados pessoais</h2>
+          <span>Atualize suas informações de acesso.</span>
 
           <div class="campo-preenchimento">
-            <label for="e-mail">Nome completo</label>
-            <input type="text" id="nome" name="nome" />
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" value="Marina Oliveira" />
           </div>
 
           <div class="campo-preenchimento">
             <label for="e-mail">E-mail</label>
-            <input type="email" id="e-mail" name="e-mail" />
+            <input type="email" id="e-mail" name="e-mail" value="marina@email.com" />
           </div>
 
           <div class="campo-preenchimento">
-            <label for="senha">Senha</label>
+            <label for="senha">Nova senha</label>
             <div class="campo-preenchimento-senha">
-              <input type="password" id="senha" name="senha" placeholder="Crie uma senha" autocomplete="new-password"
+              <input type="password" id="senha" name="senha" value="********" placeholder="Crie uma senha" autocomplete="new-password"
                 aria-describedby="requisito" minlength="8" />
               <button class="botao-mostrar-senha" type="button" aria-label="Mostrar senha">
                 <i class="fa-solid fa-eye" aria-hidden="true"></i>
@@ -76,39 +77,30 @@
             </div>
             <p id="requisito" class="campo-requisito">mínimo 8 caracteres · Deixe em branco para manter.</p>
           </div>
-        </form>
+        </div>
+
+        <div class="secao-frase">
+          <h3>Uma conta, toda a cidade.</h3>
+          <p>Seu perfil é usado para acessar o mapa e consultar as linhas e os pontos de Canoas.</p>
+        </div>
+      </section>
+
+      <div class="acoes-formulario">
+        <button class="btn-salvar" type="submit">Salvar alterações</button>
+        <div class="status-atualizado">Dados atualizados</div>
       </div>
-      <div class="secao-frase">
-        <h3>Uma conta, toda a cidade.</h3>
-        <p>Seu perfil é usado para acessar o mapa
-          e consultar as linhas e os pontos de Canoas.</p>
-      </div>
-      </div>
-
-
-
-
-    </section>
-
-
-    <button class="btn-salvar" type="submit">Salvar alterações</button>
     </form>
-
-    </div>
-
 
     <div class="secao-excluir">
       <div class="secao-excluir-esquerda">
-        <p>Excluir conta </p>
+        <p>Excluir minha conta</p>
         <span>Esta ação é permanente.</span>
-    </div>
-    <div class="secao-excluir-direita">
-      <button class="btn-excluir" type="submit">Excluir conta</button>
-    </div>
+      </div>
+      <div class="secao-excluir-direita">
+        <button class="btn-excluir" type="button">Excluir conta</button>
+      </div>
     </div>
   </main>
-
-
 </body>
 
 </html>
