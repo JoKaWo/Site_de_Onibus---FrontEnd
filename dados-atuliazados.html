@@ -18,18 +18,20 @@
 <body>
   <!-- Cabeçalho -->
   <header class="cabecalho">
-    <i class="fa-solid fa-bus-simple cabecalho-logo" aria-hidden="true"></i>
+    <img class="cabecalho-logo" src="./assets/logo.png" alt="Logo do Canoas Bus" />
     <h1 class="cabecalho-titulo">Canoas Bus</h1>
     <div class="cabecalho-opcoes">
       <a href="#">Mapa</a>
       <a href="#">Meu perfil</a>
     </div>
+    <div class="cabecalho-usuario-sair">
     <div class="cabecalho-usuario">Olá, Marina</div>
     <div class="cabecalho-sair">
       <a href="./index.html">Sair</a>
       <img src="./assets/sair.png">
     </div>
     </div>
+  </div>
   </header>
 
   <!-- Corpo -->
@@ -40,12 +42,12 @@
           <li><span aria-current="page">Minha conta</span></li>
         </ul>
       </nav>
+
       <h1 class="dados-titulo">Meu perfil</h1>
       <span class="dados-subtitulo">Seus dados, sempre em dia.</span>
     </aside>
 
     <section class="principal-dados">
-
       <div class="secao-dados">
 
         <h2>Dados pessoais</h2>
@@ -76,27 +78,33 @@
           </div>
         </form>
       </div>
-    
-      <div>
+      <div class="secao-frase">
         <h3>Uma conta, toda a cidade.</h3>
-        <p>Seu perfil é usado para acessar o mapa e consultar as linhas e os pontos de Canoas.</p>
+        <p>Seu perfil é usado para acessar o mapa
+          e consultar as linhas e os pontos de Canoas.</p>
       </div>
+      </div>
+
+
 
 
     </section>
 
-    <p id="mensagem" class="mensagem" role="alert"></p>
-    <button type="submit">Salvar alterações</button>
+
+    <button class="btn-salvar" type="submit">Salvar alterações</button>
     </form>
 
     </div>
 
-    </section>
 
-
-    <p>Excluir conta </p> 
-      <span>Essa ação é permanete</span>
-    
+    <div class="secao-excluir">
+      <div class="secao-excluir-esquerda">
+        <p>Excluir conta </p>
+        <span>Essa ação é permanete</span>
+    </div>
+    <div class="secao-excluir-direita">
+      <button class="btn-excluir" type="submit">Excluir conta</button>
+    </div>
     </div>
   </main>
 
