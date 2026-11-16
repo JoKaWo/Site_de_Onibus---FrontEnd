@@ -535,6 +535,15 @@ body {
   padding: 0 24px;
 }
 
+.btn-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--cor-preto);
+}
+
 .breadcrumb {
   font-size: 12px;
   font-weight: bold;
@@ -736,6 +745,186 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+}
+
+/* Esconde o checkbox original */
+.modal-checkbox {
+  display: none;
+}
+
+/* O seu botão de exclusão (que agora é um label funcional) */
+.btn-excluir {
+  background-color: #dc3545; /* Vermelho padrão para ações destrutivas */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  border: none;
+  transition: background 0.2s;
+  text-align: center;
+}
+
+.btn-excluir:hover {
+  background-color: #b02a37;
+}
+
+/* Fundo escuro do modal (Overlay) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Estado inicial: Oculto */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Caixa de conteúdo do modal */
+.modal-container {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-container h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.modal-container p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+
+.modal-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+
+.btn-cancelar {
+  background-color: var(--cor-branco);
+  color: var(--cor-preto);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  border:1px solid var(--cor-azul-cinzento);
+}
+
+.btn-confirmar-exclusao {
+  background-color: var(--cor-vermelho);
+  color: var(--cor-branco);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+}
+
+.btn-confirmar-exclusao:hover {
+  background-color:var(--cor-vermelho);
+}
+
+.modal-checkbox:checked ~ .modal-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-checkbox:checked ~ .modal-overlay .modal-container {
+  transform: translateY(0);
+}
+
+/**************************************************/
+/********************* MOBILE *********************/
+/**************************************************/
+
+@media (max-width: 768px) {
+  .cabecalho-logo {
+    margin-left: 16px;
+  }
+
+  .cabecalho-opcoes,
+  .cabecalho-usuario-sair {
+    display: none;
+  }
+
+  .btn-menu {
+    display: block;
+    margin-left: auto;
+    margin-right: 16px;
+  }
+
+  .main-dados {
+    margin: 20px 16px;
+    padding: 0;
+  }
+
+  .dados-titulo {
+    font-size: 1.5rem;
+  }
+
+  .principal-dados {
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 16px;
+    gap: 0;
+  }
+
+  .secao-frase {
+    display: none;
+  }
+
+  .secao-dados {
+    width: 100%;
+    margin: 0;
+  }
+
+  .acoes-formulario {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-salvar {
+    width: 100%;
+    max-width: none;
+  }
+
+  .status-atualizado {
+    text-align: center;
+  }
+
+  .secao-excluir {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .secao-excluir-direita {
+    width: 100%;
+  }
+
+  .btn-excluir {
+    width: 100%;
+  }
 }
 
 /**************************************************/

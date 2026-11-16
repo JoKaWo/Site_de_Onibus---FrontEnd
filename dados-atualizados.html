@@ -35,9 +35,11 @@
         <img src="./assets/sair.png" alt="Ícone sair" />
       </div>
     </div>
+    <button class="btn-menu" aria-label="Abrir menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </header>
 
-  <!-- Corpo -->
   <main class="main-dados">
     <aside class="dados-cabecalho-container">
       <nav aria-label="breadcrumb">
@@ -97,7 +99,23 @@
         <span>Esta ação é permanente.</span>
       </div>
       <div class="secao-excluir-direita">
-        <button class="btn-excluir" type="button">Excluir conta</button>
+        <label for="modal-toggle" class="btn-excluir">Excluir conta</label>
+
+<input type="checkbox" id="modal-toggle" class="modal-checkbox">
+
+<div class="modal-overlay">
+  <div class="modal-container">
+    <h2>Excluir sua conta?</h2>
+    <p>Seu acesso e seus dados serão removidos.
+Não é possível desfazer esta ação.</p>
+    
+    <div class="modal-btns">
+      <label for="modal-toggle" class="btn-cancelar">Cancelar</label>
+      
+      <button type="button" class="btn-confirmar-exclusao">Excluir conta</button>
+    </div>
+  </div>
+</div>
       </div>
     </div>
   </main>
