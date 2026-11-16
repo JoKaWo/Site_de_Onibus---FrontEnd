@@ -514,7 +514,6 @@ a {
   color: #01447e;
 }
 
-
 .nav-breadcrumb li span {
   color: var(--cor-azul-cinzento);
   font-size: 11;
@@ -599,7 +598,6 @@ a {
 }
 
 .secao-excluir span{
-  margin: 0px 0px 32px 32px;
   font-size: 13px;
   color: var(--cor-azul-cinzento);
 }
@@ -607,7 +605,7 @@ a {
 .btn-excluir{
   display: flex;
   flex-direction: row;
-  margin-right: 32px;
+  justify-content:flex-end;
   height: 48px;
   width: 200px;
   background-color: var(--cor-vermelho);
@@ -616,4 +614,40 @@ a {
   padding: 10px 20px;
   border-radius: 12px;
   cursor: pointer;
+}
+
+/**************************************************/
+/**************** CABECALHO ADMIN ****************/
+/**************************************************/
+
+.cabecalho-admin {
+  background-color: var(--cor-branco);
+  border-bottom: 1px solid var(--cor-cinza-claro);
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.cabecalho-admin img {
+  margin-left: 64px;
+}
+
+.cabecalho-admin h1{
+  font-weight: var(--fonte-600);
+  font-size: 18px;
+}
+
+.nav-admin {
+  margin-left: 116px;
+}
+
+.nav-admin ul {
+  gap: 71px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
