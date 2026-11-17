@@ -528,11 +528,9 @@ body {
 }
 
 .main-dados {
+  padding-left: 200px ;
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 24px;
 }
 
 .btn-menu {
@@ -546,13 +544,15 @@ body {
 
 .breadcrumb {
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--cor-azul-cinzento);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   list-style: none;
   padding: 0;
-  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .breadcrumb a {
@@ -560,8 +560,13 @@ body {
   text-decoration: none;
 }
 
+.breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin-left: 8px;
+  color: var(--cor-azul-cinzento);
+}
+
 .dados-titulo {
-  margin: 0 0 4px 0;
   color: var(--cor-preto);
   font-size: 2rem;
   font-weight: 600;
@@ -577,7 +582,6 @@ body {
   flex-direction: row;
   background-color: var(--cor-branco);
   border-radius: 12px;
-  margin-top: 24px;
   border: 1px solid var(--cor-cinza-claro);
   justify-content: space-between;
   padding: 32px;
@@ -590,7 +594,7 @@ body {
   flex-direction: column;
 }
 
-.secao-dados h2 {
+.secao-dados h3 {
   font-size: 18px;
   font-weight: 600;
   margin: 0 0 4px 0;
@@ -699,10 +703,6 @@ body {
   transition: filter 0.2s;
 }
 
-.btn-salvar:hover {
-  filter: brightness(0.95);
-}
-
 .status-atualizado {
   background-color: var(--cor-verde-claro);
   color: var(--cor-verde);
@@ -716,11 +716,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--cor-branco);
-  border: 1px solid var(--cor-cinza-claro);
-  border-radius: 12px;
   padding: 24px;
-  margin-top: 32px;
 }
 
 .secao-excluir-esquerda p {
@@ -747,15 +743,15 @@ body {
   transition: background-color 0.2s ease;
 }
 
-/* Esconde o checkbox original */
+
 .modal-checkbox {
   display: none;
 }
 
-/* O seu botão de exclusão (que agora é um label funcional) */
+
 .btn-excluir {
-  background-color: #dc3545; /* Vermelho padrão para ações destrutivas */
-  color: white;
+  background-color:var(--cor-vermelho);
+  color: var(--cor-branco);
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -768,11 +764,6 @@ body {
   text-align: center;
 }
 
-.btn-excluir:hover {
-  background-color: #b02a37;
-}
-
-/* Fundo escuro do modal (Overlay) */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -784,15 +775,15 @@ body {
   justify-content: center;
   align-items: center;
   
-  /* Estado inicial: Oculto */
+ 
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-/* Caixa de conteúdo do modal */
+
 .modal-container {
-  background: white;
+  background: var(--cor-branco);
   padding: 30px;
   border-radius: 8px;
   width: 90%;
@@ -928,7 +919,7 @@ body {
 }
 
 /**************************************************/
-/**************** CABECALHO ADMIN ****************/
+/**************** LINHAS ****************/
 /**************************************************/
 
 .cabecalho-admin {
@@ -961,4 +952,31 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.main-linhas{
+  padding-left: 150px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--cor-azul-cinzento);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+.breadcrumb a {
+  color: var(--cor-azul-cinzento);
+  text-decoration: none;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: "/";
+  margin-left: 8px;
+  color: var(--cor-azul-cinzento);
 }

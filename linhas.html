@@ -17,42 +17,49 @@
 
 <body>
   <!-- Cabeçalho -->
-  <header class="cabecalho-admin">
-    <img src="./assets/logo.png" alt="Logo do Canoas Bus" />
+  <header class="cabecalho">
+    <div class="cabecalho-logo">
+      <img src="./assets/logo.png" alt="Ícone de ônibus" />
+    </div>
     <h1 class="cabecalho-titulo">Canoas Bus</h1>
-    <nav class="nav-admin">
-    <ul>
-      <li><a href="#">Mapa</a></li>
-      <li><a href="#">Linhas</a></li>
-      <li><a href="#">Pontos</a></li>
-    </ul>
-  </nav>
+
+    <nav class="cabecalho-opcoes">
+      <a href="#">Mapa</a>
+      <a href="#">Linhas</a>
+      <a href="#" class="ativo">Pontos</a>
+    </nav>
+
     <div class="cabecalho-usuario-sair">
-    <div class="cabecalho-categoria-">Administrador</div>
-    <div class="cabecalho-usuario">Meu perfil</div>
-    <div class="cabecalho-sair">
-      <a href="./index.html">Sair</a>
-      <img src="./assets/sair.png">
+      <div class="cabecalho-usuario">Administrador</div>
+      <div class="cabecalho-perfil">Meu perfil</div>
+      <div class="cabecalho-sair">
+        <a href="./index.html">Sair</a>
+        <img src="./assets/sair.png" alt="Ícone sair" />
+      </div>
     </div>
-    </div>
-  </div>
+    <button class="btn-menu" aria-label="Abrir menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </header>
 
-  <main class="main-linhas">
-  <nav class="nav-breadcrumb">
-    <ul>
-      <li><a href="#" class="link-voltar">&larr; Administração</a></li>
-      <li><span aria-current="page">Linhas</span></li>
-    </ul>
-  </nav>
 
-  <div class="conteudo-principal">
-    <div class="conteudo-principal-esq">
-  <h1 class="dados-titulo">Linhas de ônibus</h1> 
-  <span class="dados-subtitulo">Organize as linhas e seus itinerários.</span>
-  </div>
-  <button class="botao-adicionar" id="botao-adicionar-linha">Adicionar linha</button>
-  </div>
-</main>
+  <main class="main-linhas">
+    <aside class="dados-cabecalho-container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href="#">Administração</a></li>
+          <li><a href="#">Pontos</a></li>
+        </ol>
+      </nav>
+
+    <div class="conteudo-principal">
+      <div class="conteudo-principal-esq">
+        <h1 class="dados-titulo">Linhas de ônibus</h1>
+        <span class="dados-subtitulo">Organize as linhas e seus itinerários.</span>
+      </div>
+      <button class="botao-adicionar" id="botao-adicionar-linha">Adicionar linha</button>
+    </div>
+  </main>
 </body>
+
 </html>
