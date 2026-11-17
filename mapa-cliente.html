@@ -28,17 +28,28 @@
 
     <script src="mapa.js" defer></script>
     <script src="script.js" defer></script>
-    <title>Entrar · Canoas Bus</title>
+    <title>Mapa cliente · Canoas Bus</title>
   </head>
   <body>
     <!-- Cabeçalho -->
     <header class="cabecalho">
       <i class="fa-solid fa-bus-simple cabecalho-logo" aria-hidden="true"></i>
       <h1 class="cabecalho-titulo">Canoas Bus</h1>
-      <div class="cabecalho-localizacao">
-        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-        <p>Canoas, RS</p>
+      <nav class="cabecalho-opcoes">
+      <a href="#"class="ativo">Mapa</a>
+      <a href="#">Meu perfil</a>
+    </nav>
+
+    <div class="cabecalho-usuario-sair">
+      <div class="cabecalho-usuario">Olá, Marina</div>
+      <div class="cabecalho-sair">
+        <a href="./index.html">Sair</a>
+        <img src="./assets/sair.png" alt="Ícone sair" />
       </div>
+    </div>
+    <button class="btn-menu" aria-label="Abrir menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
     </header>
 <body class="pagina-mapa">
   <!-- Cabeçalho do Canoas Bus -->
