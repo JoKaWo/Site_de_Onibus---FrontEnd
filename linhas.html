@@ -48,18 +48,68 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li><a href="#">Administração</a></li>
-          <li><a href="#">Pontos</a></li>
+          <li><a href="#">Linhas</a></li>
         </ol>
       </nav>
 
-    <div class="conteudo-principal">
-      <div class="conteudo-principal-esq">
-        <h1 class="dados-titulo">Linhas de ônibus</h1>
-        <span class="dados-subtitulo">Organize as linhas e seus itinerários.</span>
+      <div class="conteudo-principal">
+        <div class="conteudo-principal-esq">
+          <h1 class="dados-titulo">Linhas de ônibus</h1>
+          <span class="dados-subtitulo">Organize as linhas e seus itinerários.</span>
+        </div>
+        <button class="botao-adicionar" id="botao-adicionar-linha">+ Nova linha</button>
       </div>
-      <button class="botao-adicionar" id="botao-adicionar-linha">Adicionar linha</button>
-    </div>
-  </main>
-</body>
+      <search>
+        <form action="/buscar" method="GET">
+          <input type="search" name="q" placeholder="Buscar número ou nome">
+          <button type="submit" class="btn-imagem" aria-label="Ir">
+            <img src="./assets/search.png" alt="Ir">
+          </button>
+        </form>
+      </search>
 
+      <div class="card-tabela">
+  <table class="tabela-linhas">
+    <thead>
+      <tr>
+        <th>NÚMERO</th>
+        <th>NOME</th>
+        <th>ITINERÁRIO</th>
+        <th class="col-acoes">AÇÕES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Número" class="numero">101</td>
+        <td data-label="Nome" class="nome">Centro - Unilasalle</td>
+        <td data-label="Itinerário" class="itinerario">Estação Canoas → Av. Victor Barreto → Unilasalle</td>
+        <td data-label="Ações" class="acoes">
+          <button class="btn-icon" title="Editar">✏️</button>
+          <button class="btn-icon btn-delete" title="Excluir">🗑️</button>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Número" class="numero">205</td>
+        <td data-label="Nome" class="nome">Centro - Mathias Velho</td>
+        <td data-label="Itinerário" class="itinerario">Estação Canoas → Unilasalle → Mathias Velho</td>
+        <td data-label="Ações" class="acoes">
+          <button class="btn-icon" title="Editar">✏️</button>
+          <button class="btn-icon btn-delete" title="Excluir">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tabela-rodape">
+    <span>Mostrando 1–2 de 2 linhas</span>
+    <span>Página 1 de 1</span>
+  </div>
+</div>
+
+  </main>
+  
+    <footer>
+      <p>Canoas Bus · Dados de exemplo · Canoas, RS</p>
+    </footer>
+</body>
 </html>
