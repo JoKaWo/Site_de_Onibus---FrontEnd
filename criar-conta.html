@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>Criar conta · Canoas Bus</title>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+      <i class="fa-solid fa-bus-simple cabecalho-logo" aria-hidden="true"></i>
+      <h1 class="cabecalho-titulo">Canoas Bus</h1>
+      <div class="cabecalho-localizacao">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <p>Canoas, RS</p>
+      </div>
+    </header>
+
+    <!-- Corpo -->
+    <main>
+      <aside class="apresentacao">
+        <p class="apresentacao-slogan">SUA CIDADE, MAIS PERTO</p>
+        <p class="apresentacao-titulo">Seu próximo destino começa aqui.</p>
+        <p class="apresentacao-texto">
+          Encontre linhas e pontos de ônibus e explore Canoas com mais
+          facilidade.
+        </p>
+        <img
+          class="apresentacao-imagem"
+          src="assets/percurso-ilustrativo.svg"
+          alt=""
+        />
+      </aside>
+
+      <div class="recepcao-formulario">
+        <h2>Crie sua conta</h2>
+        <p class="frase-apoio">Sua próxima viagem começa com um cadastro.</p>
+
+        <form class="formulario" id="form-cadastro" action="" novalidate>
+          <div class="campo-preenchimento">
+            <label for="nome">Nome completo</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Marina Oliveira"
+              autocomplete="name"
+            />
+          </div>
+
+          <div class="campo-preenchimento">
+            <label for="e-mail">E-mail</label>
+            <input
+              type="email"
+              id="e-mail"
+              name="e-mail"
+              placeholder="seu@email.com"
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="campo-preenchimento">
+            <label for="senha">Senha</label>
+            <div class="campo-preenchimento-senha">
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Crie uma senha"
+                autocomplete="new-password"
+                aria-describedby="requisito"
+                minlength="8"
+              />
+              <button
+                class="botao-mostrar-senha"
+                type="button"
+                aria-label="Mostrar senha"
+              >
+                <i class="fa-solid fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+            <p id="requisito" class="campo-requisito">mínimo 8 caracteres</p>
+          </div>
+
+          <p id="mensagem" class="mensagem" role="alert"></p>
+
+          <button type="submit">Criar conta</button>
+        </form>
+
+        <p class="nao-tem-conta">
+          Já tem uma conta? <a href="index.html">Entrar</a>
+        </p>
+      </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>Canoas Bus · Mobilidade mais simples</p>
+    </footer>
+  </body>
+</html>
