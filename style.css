@@ -1,6 +1,11 @@
 @font-face {
   font-family: "Inter";
+<<<<<<< HEAD
   src: url("/assets/Inter-VariableFont_opsz\,wght.ttf") format("woff2-variations");
+=======
+  src: url("/assets/Inter-VariableFont_opsz\,wght.ttf")
+    format("woff2-variations");
+>>>>>>> US07-US08-US09---Linhas_e_paradas
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -95,7 +100,10 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> US07-US08-US09---Linhas_e_paradas
 article,
 aside,
 details,
@@ -109,21 +117,33 @@ nav,
 section {
   display: block;
 }
+<<<<<<< HEAD
 
 body {
   line-height: 1;
 }
 
+=======
+body {
+  line-height: 1;
+}
+>>>>>>> US07-US08-US09---Linhas_e_paradas
 ol,
 ul {
   list-style: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> US07-US08-US09---Linhas_e_paradas
 blockquote,
 q {
   quotes: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> US07-US08-US09---Linhas_e_paradas
 blockquote:before,
 blockquote:after,
 q:before,
@@ -131,7 +151,10 @@ q:after {
   content: "";
   content: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> US07-US08-US09---Linhas_e_paradas
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -144,19 +167,29 @@ table {
   --cor-preto: #1e293b;
   --cor-azul-cinzento: #64748b;
   --cor-laranja: #f59e0b;
+<<<<<<< HEAD
+=======
+  --cor-vermelho-claro: #fef2f2;
+  --cor-verde-claro: #f0fdf4;
+>>>>>>> US07-US08-US09---Linhas_e_paradas
   --cor-laranja-escuro: #d97706;
   --cor-laranja-texto: #92400e;
   --cor-creme: #fef6e4;
   --cor-gelo: #f8fafc;
   --cor-verde: #15803d;
+<<<<<<< HEAD
   --cor-verde-claro:#F0FDF4;
   --cor-cinza-claro: #e2e8f0;
   --cor-vermelho-claro:#FEF2F2;
+=======
+  --cor-cinza-claro: #e2e8f0;
+>>>>>>> US07-US08-US09---Linhas_e_paradas
   --fonte-global: "Inter", sans-serif;
   --fonte-400: 400;
   --fonte-600: 600;
 }
 
+<<<<<<< HEAD
 /* Tela Login */
 
 * {
@@ -962,3 +995,8 @@ body {
   padding: 0;
   margin: 0;
 }
+=======
+* {
+  box-sizing: border-box;
+}
+>>>>>>> US07-US08-US09---Linhas_e_paradas

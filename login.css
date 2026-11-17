@@ -1,0 +1,265 @@
+/* Tela Login */
+
+body {
+  background-color: var(--cor-gelo);
+  color: var(--cor-preto);
+  font-family: var(--fonte-global);
+  font-weight: var(--fonte-400);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+  padding: 24px 20px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: var(--fonte-600);
+  color: var(--cor-preto);
+  margin-bottom: 5px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: var(--fonte-400);
+  color: var(--cor-preto);
+}
+
+input {
+  width: 100%;
+  height: 44px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: var(--cor-branco);
+  border: 1px solid var(--cor-cinza-claro);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input::placeholder {
+  color: var(--cor-azul-cinzento);
+}
+
+input:focus {
+  outline: 2px solid var(--cor-laranja);
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  background-color: var(--cor-laranja);
+  border: none;
+  border-radius: 8px;
+  font-weight: var(--fonte-600);
+  cursor: pointer;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: var(--cor-laranja-escuro);
+}
+
+footer {
+  font-size: 12px;
+  color: var(--cor-azul-cinzento);
+  padding: 15px 20px;
+}
+
+a {
+  color: var(--cor-preto);
+  font-weight: var(--fonte-600);
+  text-decoration: none;
+}
+
+.nao-tem-conta {
+  color: var(--cor-azul-cinzento);
+  padding-top: 24px;
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+  background-color: var(--cor-branco);
+  border-bottom: 1px solid var(--cor-cinza-claro);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cabecalho-titulo {
+  font-weight: var(--fonte-600);
+  font-size: 18px;
+}
+
+.cabecalho-logo {
+  width: 32px;
+  height: 32px;
+  background-color: var(--cor-laranja);
+  color: var(--cor-branco);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.cabecalho-localizacao {
+  display: none;
+}
+
+/* Formulário */
+
+.frase-apoio {
+  font-size: 14px;
+  color: var(--cor-azul-cinzento);
+  margin-bottom: 30px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.campo-preenchimento {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-preenchimento-senha {
+  position: relative;
+}
+
+.campo-preenchimento-senha input {
+  padding-right: 44px;
+}
+
+.botao-mostrar-senha {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--cor-azul-cinzento);
+}
+
+.botao-mostrar-senha:hover {
+  background-color: transparent;
+  color: var(--cor-preto);
+}
+
+/* Card de apresentação (só aparece no desktop) */
+
+.apresentacao {
+  display: none;
+}
+
+/* Texto auxiliar do campo */
+
+.campo-requisito {
+  font-size: 12px;
+  color: var(--cor-azul-cinzento);
+}
+
+/* Mensagens de erro e sucesso */
+
+.mensagem {
+  font-size: 14px;
+  font-weight: var(--fonte-600);
+}
+
+.mensagem:empty {
+  display: none;
+}
+
+.mensagem-erro {
+  color: var(--cor-vermelho);
+}
+
+.mensagem-sucesso {
+  color: var(--cor-verde);
+}
+
+/* Desktop */
+
+@media (min-width: 768px) {
+  .cabecalho {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .cabecalho-localizacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--cor-azul-cinzento);
+  }
+
+  main {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .apresentacao {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: var(--cor-creme);
+    border-radius: 16px;
+    padding: 35px;
+  }
+
+  .apresentacao-slogan {
+    font-size: 12px;
+    font-weight: var(--fonte-600);
+    color: var(--cor-laranja-texto);
+    letter-spacing: 0.5px;
+  }
+
+  .apresentacao-titulo {
+    font-size: 40px;
+    font-weight: var(--fonte-600);
+    color: var(--cor-preto);
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .apresentacao-texto {
+    font-size: 16px;
+    color: var(--cor-azul-cinzento);
+  }
+
+  .apresentacao-imagem {
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+    padding-top: 50px;
+  }
+
+  .recepcao-formulario {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 auto;
+    align-self: center;
+  }
+}

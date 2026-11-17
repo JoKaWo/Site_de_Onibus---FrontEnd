@@ -1,5 +1,199 @@
 <!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <script src="admin.js" defer></script>
+    <script src="dados.js" defer></script>
+    <script src="linhas.js" defer></script>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+
+    <title>Linhas · Canoas Bus</title>
+  </head>
+  <body data-pagina="linhas">
+    <!-- Cabeçalho -->
+    <header class="topo">
+      <a class="topo-marca" href="mapa-admin.html">
+        <i class="fa-solid fa-bus-simple topo-logo" aria-hidden="true"></i>
+        <span>Canoas Bus</span>
+      </a>
+
+      <nav class="topo-nav" aria-label="Principal">
+        <a href="mapa-admin.html" data-pagina="mapa">Mapa</a>
+        <a href="linhas.html" data-pagina="linhas">Linhas</a>
+        <a href="pontos.html" data-pagina="pontos">Pontos</a>
+      </nav>
+
+      <div class="topo-usuario">
+        <span id="topo-nome-usuario">Administrador</span>
+        <a href="perfil.html">Meu perfil</a>
+        <button type="button" class="topo-sair" data-sair>
+          Sair <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="topo-menu-botao"
+        id="abrir-menu"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu-lateral"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <!-- Menu lateral (celular) -->
+    <div class="menu-fundo" id="menu-fundo"></div>
+    <aside
+      class="menu-lateral"
+      id="menu-lateral"
+      aria-label="Menu de navegação"
+    >
+      <div class="menu-topo">
+        <div class="topo-marca">
+          <i class="fa-solid fa-bus-simple topo-logo" aria-hidden="true"></i>
+          <span>Canoas Bus</span>
+        </div>
+        <button
+          type="button"
+          class="menu-fechar"
+          id="fechar-menu"
+          aria-label="Fechar menu"
+        >
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <p class="menu-rotulo">ADMINISTRADOR</p>
+      <nav>
+        <a href="mapa-admin.html" data-pagina="mapa"
+          ><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Mapa</a
+        >
+        <a href="linhas.html" data-pagina="linhas"
+          ><i class="fa-solid fa-list" aria-hidden="true"></i> Linhas</a
+        >
+        <a href="pontos.html" data-pagina="pontos"
+          ><i class="fa-solid fa-map-pin" aria-hidden="true"></i> Pontos</a
+        >
+        <a href="perfil.html"
+          ><i class="fa-solid fa-user" aria-hidden="true"></i> Meu perfil</a
+        >
+      </nav>
+
+      <div class="menu-divisor"></div>
+      <button type="button" class="menu-sair" data-sair>
+        <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i> Sair
+      </button>
+
+      <p class="menu-rodape">Canoas Bus · Mobilidade mais simples</p>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="conteudo">
+      <p class="conteudo-trilha">ADMINISTRAÇÃO / LINHAS</p>
+
+      <div class="conteudo-cabecalho">
+        <div>
+          <h1 class="conteudo-titulo">Linhas de ônibus</h1>
+          <p class="conteudo-descricao">
+            Organize as linhas e seus itinerários.
+          </p>
+        </div>
+        <a class="botao-principal" href="nova-linha.html">
+          <i class="fa-solid fa-plus" aria-hidden="true"></i> Nova linha
+        </a>
+      </div>
+
+      <p class="aviso-sucesso" id="aviso" role="status"></p>
+      <div class="barra-busca">
+        <div class="campo-busca">
+          <input
+            type="search"
+            id="busca"
+            placeholder="Buscar número ou nome"
+            aria-label="Buscar linha por número ou nome"
+          />
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </div>
+        <p class="contador" id="contador" aria-live="polite"></p>
+      </div>
+
+      <!-- Tabela (só aparece no desktop) -->
+      <div class="tabela-caixa">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>NÚMERO</th>
+              <th>NOME</th>
+              <th>ITINERÁRIO</th>
+              <th>AÇÕES</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-linhas"></tbody>
+        </table>
+        <div class="tabela-rodape">
+          <span id="tabela-resumo"></span>
+          <span>Página 1 de 1</span>
+        </div>
+      </div>
+
+      <!-- Cards (só aparecem no celular) -->
+      <div class="cartoes" id="cartoes-linhas"></div>
+
+      <p class="vazio" id="mensagem-vazia" hidden>Nenhuma linha encontrada.</p>
+    </main>
+
+    <footer class="rodape">
+      <p>Dados de exemplo · Canoas, RS</p>
+    </footer>
+
+    <!-- Modal de excluir -->
+    <dialog class="modal" id="modal-excluir" aria-labelledby="modal-titulo">
+      <div class="modal-conteudo">
+        <button
+          type="button"
+          class="modal-fechar"
+          id="modal-fechar"
+          aria-label="Fechar"
+        >
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="modal-icone">
+          <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
+        </div>
+        <h2 class="modal-titulo" id="modal-titulo">Excluir linha?</h2>
+        <p class="modal-texto">
+          A linha será removida dos pontos vinculados. Esta ação não pode ser
+          desfeita.
+        </p>
+        <div class="modal-acoes">
+          <button type="button" class="botao-secundario" id="modal-cancelar">
+            Cancelar
+          </button>
+          <button type="button" class="botao-perigo" id="modal-confirmar">
+            Excluir
+          </button>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
+<!doctype html>
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
