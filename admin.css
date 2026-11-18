@@ -901,3 +901,134 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Pontos */
+
+.ponto-icone {
+  color: var(--cor-azul-cinzento);
+}
+
+.cartao > .ponto-icone {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ponto-celula {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.selos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.selos .selo {
+  margin-bottom: 0;
+}
+
+.tabela .selos {
+  margin-top: 0;
+}
+
+/* Formulário de ponto */
+
+.formulario-ponto {
+  max-width: 1000px;
+}
+
+.ponto-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+
+.campo-rotulo {
+  font-size: 13px;
+  font-weight: var(--fonte-600);
+}
+
+/* Espaço onde o mapa do colega entra */
+.mapa-ponto {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  background-color: var(--cor-gelo);
+  border: 1px dashed var(--cor-cinza-claro);
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--cor-azul-cinzento);
+}
+
+.grupo-linhas {
+  min-width: 0;
+}
+
+.grupo-linhas legend {
+  font-size: 13px;
+  font-weight: var(--fonte-600);
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.grupo-linhas .campo-ajuda {
+  margin-top: 8px;
+}
+
+.lista-linhas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.linha-opcao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: var(--cor-branco);
+  border: 1px solid var(--cor-cinza-claro);
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.linha-opcao input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--cor-laranja);
+}
+
+.linha-opcao .selo {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .ponto-grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
+    align-items: start;
+  }
+
+  /* O mapa fica na coluna da direita, ao lado dos 3 primeiros campos */
+  .campo-mapa {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+
+  .mapa-ponto {
+    height: 280px;
+  }
+}
+
+/* Garante que o atributo hidden sempre esconde, mesmo com display definido em outra regra */
+[hidden] {
+  display: none !important;
+}

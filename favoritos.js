@@ -1,4 +1,5 @@
 const gradeFavoritas = document.querySelector("#grade-favoritas");
+const gradePontosFavoritos = document.querySelector("#grade-pontos-favoritos");
 
 function desenharFavoritosLinhas() {
   const ids = carregarFavoritos(usuarioLogado.email).linhas;
@@ -20,10 +21,24 @@ function desenharFavoritosLinhas() {
   document.querySelector("#vazio-linhas").hidden = favoritas.length !== 0;
 }
 
-// AMANHÃ: quando existir a tela de pontos, desenha aqui os pontos favoritos
-// (mesma ideia da função de cima, usando carregarFavoritos(...).pontos)
 function desenharFavoritosPontos() {
-  document.querySelector("#vazio-pontos").hidden = false;
+  const ids = carregarFavoritos(usuarioLogado.email).pontos;
+
+  const favoritos = carregarPontos().filter(function (ponto) {
+    return ids.includes(ponto.id);
+  });
+
+  favoritos.sort(function (a, b) {
+    return a.nome.localeCompare(b.nome, "pt-BR");
+  });
+
+  let html = "";
+  favoritos.forEach(function (ponto) {
+    html += htmlCartaoPonto(ponto, true);
+  });
+  gradePontosFavoritos.innerHTML = html;
+
+  document.querySelector("#vazio-pontos").hidden = favoritos.length !== 0;
 }
 
 // Só roda na página de favoritos
@@ -39,9 +54,10 @@ if (gradeFavoritas !== null && usuarioLogado !== null) {
     });
   });
 
-  // Aqui, tirar a estrela faz o card sumir, então redesenha a lista
+  // Tirar a estrela faz o card sumir, então redesenha as duas listas
   ligarEstrelas(function () {
     desenharFavoritosLinhas();
+    desenharFavoritosPontos();
   });
 
   desenharFavoritosLinhas();
