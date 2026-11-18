@@ -89,17 +89,13 @@ function removerPontoDosFavoritos(idPonto) {
 // { id, nome, ..., linhas: [ids das linhas] }
 
 function removerLinhaDosPontos(idLinha) {
-  const salvo = localStorage.getItem("pontos");
-  if (salvo === null) {
-    return;
-  }
-  const pontos = JSON.parse(salvo);
+  const pontos = carregarPontos();
   pontos.forEach(function (ponto) {
     ponto.linhas = (ponto.linhas || []).filter(function (id) {
       return id !== idLinha;
     });
   });
-  localStorage.setItem("pontos", JSON.stringify(pontos));
+  salvarPontos(pontos);
 }
 
 // ---------- Segurança do HTML ----------
@@ -109,4 +105,51 @@ function escapar(texto) {
   const caixa = document.createElement("div");
   caixa.textContent = texto;
   return caixa.innerHTML.replaceAll('"', "&quot;");
+}
+
+function carregarPontos() {
+  const salvo = localStorage.getItem("pontos");
+  if (salvo === null) {
+    // Primeira vez: vêm dois pontos de exemplo, como no Figma
+    return [
+      {
+        id: 1,
+        nome: "Estação Canoas",
+        endereco: "Av. Victor Barreto - Centro",
+        linhas: [1, 2],
+        latitude: null,
+        longitude: null,
+      },
+      {
+        id: 2,
+        nome: "Unilasalle",
+        endereco: "Av. Victor Barreto, 2288 - Centro",
+        linhas: [1, 2],
+        latitude: null,
+        longitude: null,
+      },
+    ];
+  }
+  return JSON.parse(salvo);
+}
+
+function salvarPontos(pontos) {
+  localStorage.setItem("pontos", JSON.stringify(pontos));
+}
+
+// Monta os selinhos com o número de cada linha (recebe a lista de ids)
+function htmlSelosDasLinhas(idsDasLinhas) {
+  const doPonto = carregarLinhas().filter(function (linha) {
+    return (idsDasLinhas || []).includes(linha.id);
+  });
+
+  doPonto.sort(function (a, b) {
+    return a.numero.localeCompare(b.numero, "pt-BR", { numeric: true });
+  });
+
+  let html = "";
+  doPonto.forEach(function (linha) {
+    html += `<span class="selo">${escapar(linha.numero)}</span>`;
+  });
+  return html;
 }
