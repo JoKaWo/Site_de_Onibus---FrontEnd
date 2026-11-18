@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="mapa.css" />
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      defer
+    ></script>
+
+    <script src="mapa.js" defer></script>
+    <script src="script.js" defer></script>
+    <title>Entrar · Canoas Bus</title>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header class="topo">
+      <a class="topo-marca" href="mapa-admin.html">
+        <i class="fa-solid fa-bus-simple topo-logo" aria-hidden="true"></i>
+        <span>Canoas Bus</span>
+      </a>
+
+      <nav class="topo-nav" aria-label="Principal">
+        <a href="mapa-admin.html" data-pagina="mapa">Mapa</a>
+        <a href="linhas.html" data-pagina="linhas">Linhas</a>
+        <a href="pontos.html" data-pagina="pontos">Pontos</a>
+      </nav>
+
+      <div class="topo-usuario">
+        <span id="topo-nome-usuario">Administrador</span>
+        <a href="perfil.html">Meu perfil</a>
+        <button type="button" class="topo-sair" data-sair>
+          Sair <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="topo-menu-botao"
+        id="abrir-menu"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu-lateral"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+    <body class="pagina-mapa">
+      <!-- Cabeçalho do Canoas Bus -->
+
+      <main class="mapa-area">
+        <div id="mapa" aria-label="Mapa de Canoas"></div>
+
+        <section class="mapa-busca" aria-labelledby="titulo-busca">
+          <h2 id="titulo-busca">Para onde vamos?</h2>
+          <p>Explore os pontos de Canoas.</p>
+
+          <label for="busca-mapa">Buscar ponto ou linha</label>
+          <input
+            id="busca-mapa"
+            type="search"
+            placeholder="Buscar ponto ou linha"
+          />
+        </section>
+
+        <section
+          id="detalhes-ponto"
+          class="mapa-detalhes"
+          aria-labelledby="nome-ponto"
+          hidden
+        >
+          <button id="fechar-detalhes" type="button">Fechar</button>
+
+          <p>Ponto de ônibus</p>
+          <h2 id="nome-ponto"></h2>
+          <p id="endereco-ponto"></p>
+          <p id="linhas-ponto"></p>
+        </section>
+      </main>
+    </body>
+  </body>
+</html>

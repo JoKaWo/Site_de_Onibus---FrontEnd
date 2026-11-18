@@ -1,124 +1,158 @@
 <!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <script src="script.js" defer></script>
+    <title>Dados Atualizados · Canoas Bus</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  <title>Dados Atualizados · Canoas Bus</title>
-</head>
-
-<body>
-  <!-- Cabeçalho -->
-  <header class="cabecalho">
-    <div class="cabecalho-logo">
-      <img src="./assets/logo.png" alt="Ícone de ônibus" />
-    </div>
-    <h1 class="cabecalho-titulo">Canoas Bus</h1>
-    
-    <nav class="cabecalho-opcoes">
-      <a href="#">Mapa</a>
-      <a href="#" class="ativo">Meu perfil</a>
-    </nav>
-
-    <div class="cabecalho-usuario-sair">
-      <div class="cabecalho-usuario">Olá, Marina</div>
-      <div class="cabecalho-sair">
-        <a href="./index.html">Sair</a>
-        <img src="./assets/sair.png" alt="Ícone sair" />
+  <body>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+      <div class="cabecalho-logo">
+        <img src="./assets/logo.png" alt="Ícone de ônibus" />
       </div>
-    </div>
-    <button class="btn-menu" aria-label="Abrir menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </header>
+      <h1 class="cabecalho-titulo">Canoas Bus</h1>
 
-  <main class="main-dados">
-    <aside class="dados-cabecalho-container">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li><a href="#">Minha conta</a></li>
-        </ol>
+      <nav class="cabecalho-opcoes">
+        <a href="#">Mapa</a>
+        <a href="#" class="ativo">Meu perfil</a>
       </nav>
 
-      <h1 class="dados-titulo">Meu perfil</h1>
-      <span class="dados-subtitulo">Seus dados, sempre em dia.</span>
-    </aside>
+      <div class="cabecalho-usuario-sair">
+        <div class="cabecalho-usuario">Olá, Marina</div>
+        <div class="cabecalho-sair">
+          <a href="./index.html">Sair</a>
+          <img src="./assets/sair.png" alt="Ícone sair" />
+        </div>
+      </div>
+      <button class="btn-menu" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
 
-    <form class="formulario" id="form-login" action="" novalidate>
-      <section class="principal-dados">
-        <div class="secao-dados">
-          <h2>Dados pessoais</h2>
-          <span>Atualize suas informações de acesso.</span>
+    <main class="main-dados">
+      <aside class="dados-cabecalho-container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li><a href="#">Minha conta</a></li>
+          </ol>
+        </nav>
 
-          <div class="campo-preenchimento">
-            <label for="nome">Nome completo</label>
-            <input type="text" id="nome" name="nome" value="Marina Oliveira" />
-          </div>
+        <h1 class="dados-titulo">Meu perfil</h1>
+        <span class="dados-subtitulo">Seus dados, sempre em dia.</span>
+      </aside>
 
-          <div class="campo-preenchimento">
-            <label for="e-mail">E-mail</label>
-            <input type="email" id="e-mail" name="e-mail" value="marina@email.com" />
-          </div>
+      <form class="formulario" id="form-login" action="" novalidate>
+        <section class="principal-dados">
+          <div class="secao-dados">
+            <h2>Dados pessoais</h2>
+            <span>Atualize suas informações de acesso.</span>
 
-          <div class="campo-preenchimento">
-            <label for="senha">Nova senha</label>
-            <div class="campo-preenchimento-senha">
-              <input type="password" id="senha" name="senha" value="********" placeholder="Crie uma senha" autocomplete="new-password"
-                aria-describedby="requisito" minlength="8" />
-              <button class="botao-mostrar-senha" type="button" aria-label="Mostrar senha">
-                <i class="fa-solid fa-eye" aria-hidden="true"></i>
-              </button>
+            <div class="campo-preenchimento">
+              <label for="nome">Nome completo</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                value="Marina Oliveira"
+              />
             </div>
-            <p id="requisito" class="campo-requisito">mínimo 8 caracteres · Deixe em branco para manter.</p>
+
+            <div class="campo-preenchimento">
+              <label for="e-mail">E-mail</label>
+              <input
+                type="email"
+                id="e-mail"
+                name="e-mail"
+                value="marina@email.com"
+              />
+            </div>
+
+            <div class="campo-preenchimento">
+              <label for="senha">Nova senha</label>
+              <div class="campo-preenchimento-senha">
+                <input
+                  type="password"
+                  id="senha"
+                  name="senha"
+                  value="********"
+                  placeholder="Crie uma senha"
+                  autocomplete="new-password"
+                  aria-describedby="requisito"
+                  minlength="8"
+                />
+                <button
+                  class="botao-mostrar-senha"
+                  type="button"
+                  aria-label="Mostrar senha"
+                >
+                  <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                </button>
+              </div>
+              <p id="requisito" class="campo-requisito">
+                mínimo 8 caracteres · Deixe em branco para manter.
+              </p>
+            </div>
+          </div>
+
+          <div class="secao-frase">
+            <h3>Uma conta, toda a cidade.</h3>
+            <p>
+              Seu perfil é usado para acessar o mapa e consultar as linhas e os
+              pontos de Canoas.
+            </p>
+          </div>
+        </section>
+
+        <div class="acoes-formulario">
+          <button class="btn-salvar" type="submit">Salvar alterações</button>
+          <div class="status-atualizado">Dados atualizados</div>
+        </div>
+      </form>
+
+      <div class="secao-excluir">
+        <div class="secao-excluir-esquerda">
+          <p>Excluir minha conta</p>
+          <span>Esta ação é permanente.</span>
+        </div>
+        <div class="secao-excluir-direita">
+          <label for="modal-toggle" class="btn-excluir">Excluir conta</label>
+
+          <input type="checkbox" id="modal-toggle" class="modal-checkbox" />
+
+          <div class="modal-overlay">
+            <div class="modal-container">
+              <h2>Excluir sua conta?</h2>
+              <p>
+                Seu acesso e seus dados serão removidos. Não é possível desfazer
+                esta ação.
+              </p>
+
+              <div class="modal-btns">
+                <label for="modal-toggle" class="btn-cancelar">Cancelar</label>
+
+                <button type="button" class="btn-confirmar-exclusao">
+                  Excluir conta
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="secao-frase">
-          <h3>Uma conta, toda a cidade.</h3>
-          <p>Seu perfil é usado para acessar o mapa e consultar as linhas e os pontos de Canoas.</p>
-        </div>
-      </section>
-
-      <div class="acoes-formulario">
-        <button class="btn-salvar" type="submit">Salvar alterações</button>
-        <div class="status-atualizado">Dados atualizados</div>
       </div>
-    </form>
-
-    <div class="secao-excluir">
-      <div class="secao-excluir-esquerda">
-        <p>Excluir minha conta</p>
-        <span>Esta ação é permanente.</span>
-      </div>
-      <div class="secao-excluir-direita">
-        <label for="modal-toggle" class="btn-excluir">Excluir conta</label>
-
-<input type="checkbox" id="modal-toggle" class="modal-checkbox">
-
-<div class="modal-overlay">
-  <div class="modal-container">
-    <h2>Excluir sua conta?</h2>
-    <p>Seu acesso e seus dados serão removidos.
-Não é possível desfazer esta ação.</p>
-    
-    <div class="modal-btns">
-      <label for="modal-toggle" class="btn-cancelar">Cancelar</label>
-      
-      <button type="button" class="btn-confirmar-exclusao">Excluir conta</button>
-    </div>
-  </div>
-</div>
-      </div>
-    </div>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>
